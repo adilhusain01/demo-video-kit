@@ -1,0 +1,16 @@
+node_modules/
+.DS_Store
+*.mp4
+*.mov
+*.webm
+*.mp3
+*.wav
+*.png
+!skills-pack/**/*.png
+build/
+raw/
+assets/
+.env
+.env.*
+*.key
+skill/demo-video/.kit-path

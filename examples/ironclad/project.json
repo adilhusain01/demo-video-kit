@@ -1,0 +1,11 @@
+{
+  "name": "ironclad-demo",
+  "theme": "gruvbox",
+  "crop": "2995:1764:206:301",
+  "band": 120,
+  "voice": { "id": "EXAVITQu4vr4xnSDxMaL", "model": "eleven_multilingual_v2" },
+  "cards": {
+    "title": { "headline": "A Zcash wallet your agent<br>can't overspend.", "sub": "Ironclad. Recorded live on Zcash testnet and Bitrefill's API, 4 November 2026." },
+    "end": { "headline": "Ironclad", "lines": ["github.com/adilhusain01/ironclad", "Built on frost-zec. Policy mode proposed in frost-zec issue 1."], "sub": "Free Society Hack, Mumbai. Zcash testnet only. MIT licence." }
+  }
+}

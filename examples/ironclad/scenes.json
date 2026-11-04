@@ -1,0 +1,203 @@
+{
+  "_note": "The real cut of the Ironclad demo, 4 Nov 2026 (the first upload is https://youtu.be/W0D4gGicvA4; this version fixes the attacks clip, which started 2.3 s early on an idle screen). Cut points and cues come from reading the raw takes frame by frame. Each clip starts about a second before its first event and ends at least three seconds after its last output. Every line has an 'at': seconds into its clip where the event it describes appears, so the voice never runs ahead of the screen. A line that would overlap the one before waits for it; a scene whose voice outlasts its footage holds the last frame.",
+  "scenes": [
+    {
+      "id": "title",
+      "card": "title",
+      "seconds": 3.0,
+      "lines": []
+    },
+    {
+      "id": "site",
+      "src": "raw/site.mp4",
+      "in": 0.3,
+      "out": 9.3,
+      "lines": [
+        {
+          "at": 0.4,
+          "text": "Ironclad gives an AI agent a Zcash wallet it can't overspend."
+        },
+        {
+          "at": 4.4,
+          "text": "The key is split three ways, and a co-signer only signs payments inside your rules."
+        }
+      ]
+    },
+    {
+      "id": "how",
+      "src": "raw/site.mp4",
+      "in": 10.2,
+      "out": 19.2,
+      "lines": [
+        {
+          "at": 0.4,
+          "text": "The agent holds one share, and the co-signer holds another."
+        },
+        {
+          "at": 3.8,
+          "text": "Two shares make a signature, and the agent only ever has one."
+        }
+      ]
+    },
+    {
+      "id": "rules",
+      "src": "raw/terminal.mp4",
+      "crop": true,
+      "in": 5.0,
+      "out": 19.5,
+      "lines": [
+        {
+          "at": 0.5,
+          "text": "These are the rules, held by the co-signer on the server."
+        },
+        {
+          "at": 6.6,
+          "text": "At most 0.2 TAZ a payment, 0.5 a day, and only our Bitrefill counter can be paid."
+        },
+        {
+          "at": 12.4,
+          "text": "The co-signer daemon waits with its share."
+        }
+      ]
+    },
+    {
+      "id": "buy",
+      "src": "raw/terminal.mp4",
+      "crop": true,
+      "in": 19.5,
+      "out": 45.0,
+      "lines": [
+        {
+          "at": 0.5,
+          "text": "Now the agent buys a phone top-up."
+        },
+        {
+          "at": 7.0,
+          "text": "It builds a shielded payment with the order in the encrypted memo, and syncs over Tor."
+        },
+        {
+          "at": 18.0,
+          "text": "Then it asks the co-signer, which checks the payment itself against the rules."
+        },
+        {
+          "at": 23.4,
+          "text": "It fits, so the co-signer adds its share, and the payment goes out over Tor."
+        }
+      ]
+    },
+    {
+      "id": "wait",
+      "src": "raw/terminal.mp4",
+      "crop": true,
+      "in": 45.0,
+      "out": 76.5,
+      "speed": 8,
+      "label": "Waiting for the block, 8x speed",
+      "lines": [
+        {
+          "at": 0.2,
+          "text": "The counter waits for the block."
+        }
+      ]
+    },
+    {
+      "id": "counter",
+      "src": "raw/terminal.mp4",
+      "crop": true,
+      "in": 76.5,
+      "out": 85.0,
+      "lines": [
+        {
+          "at": 1.0,
+          "text": "Then it buys Bitrefill's test top-up through the live API, and sends a shielded receipt back."
+        }
+      ]
+    },
+    {
+      "id": "stranger",
+      "src": "raw/attacks.mp4",
+      "crop": true,
+      "in": 9.3,
+      "out": 29.5,
+      "lines": [
+        {
+          "at": 0.5,
+          "text": "Now say the agent is compromised, and told to send the treasury to an attacker."
+        },
+        {
+          "at": 6.2,
+          "text": "It builds that payment just the same."
+        },
+        {
+          "at": 18.1,
+          "text": "The co-signer refuses. That address isn't on the list, so no signature exists."
+        }
+      ]
+    },
+    {
+      "id": "overcap",
+      "src": "raw/attacks.mp4",
+      "crop": true,
+      "in": 29.5,
+      "out": 62.5,
+      "lines": [
+        {
+          "at": 0.9,
+          "text": "Next it tries 0.25 TAZ to the right address, over the 0.2 cap."
+        },
+        {
+          "at": 9.0,
+          "text": "What the prompt said doesn't matter here. The co-signer reads the transaction itself."
+        },
+        {
+          "at": 26.4,
+          "text": "Refused again, at the key."
+        },
+        {
+          "at": 28.7,
+          "text": "Every decision goes into a hash-chained ledger the owner can audit."
+        }
+      ]
+    },
+    {
+      "id": "chain",
+      "src": "raw/chain.mp4",
+      "crop": true,
+      "in": 3.0,
+      "out": 21.5,
+      "lines": [
+        {
+          "at": 0.5,
+          "text": "Anyone can check the purchase on Zcash testnet."
+        },
+        {
+          "at": 5.4,
+          "text": "The chain shows the block it was mined in. It doesn't show who paid, who was paid, or how much."
+        }
+      ]
+    },
+    {
+      "id": "record",
+      "src": "raw/site.mp4",
+      "in": 19.4,
+      "out": 23.3,
+      "lines": [
+        {
+          "at": 0.3,
+          "text": "The public site shows the same ledger live, with the same keys to try."
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "card": "end",
+      "seconds": 5.0,
+      "lines": [
+        {
+          "at": 0.4,
+          "text": "Ironclad is open source, and built on frost-zec. Thanks for watching."
+        }
+      ]
+    }
+  ]
+}

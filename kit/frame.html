@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--
+  The title card, the end card, the caption bands and the speed labels, rendered to PNG by build.py with a
+  headless browser (agent-browser), because Homebrew's ffmpeg has no drawtext or subtitles filter.
+  build.py fills the {{...}} values from the project's theme and cards before opening this file.
+-->
+<style>
+  @font-face { font-family: "Display"; src: url("{{font_display}}") format("woff2"); font-weight: 100 900; font-stretch: 75% 125%; }
+  @font-face { font-family: "Body"; src: url("{{font_body}}") format("woff2"); font-weight: 100 900; }
+  @font-face { font-family: "Mono"; src: url("{{font_mono}}") format("woff2"); font-weight: 100 900; }
+  html, body { margin: 0; background: {{band_bg}}; }
+  .card { width: 1920px; height: 1080px; display: none; flex-direction: column; align-items: {{card_align}}; justify-content: center; gap: 34px; padding: 0 140px; box-sizing: border-box; text-align: {{card_text_align}}; background: {{card_bg}}; color: {{card_ink}}; }
+  .card h1 { font-family: "Display"; font-weight: {{display_weight}}; letter-spacing: {{display_tracking}}; font-size: 112px; line-height: 1.0; margin: 0; max-width: 1500px; }
+  .card p { font-family: "Body"; font-size: 38px; line-height: 1.45; margin: 0; color: {{card_ink_soft}}; max-width: 1300px; }
+  .card .links { font-family: "Mono"; font-size: 30px; color: {{card_accent}}; line-height: 1.7; }
+  .mark { width: 120px; height: 120px; }
+  .band { width: 1920px; height: {{band_height}}px; display: none; align-items: center; justify-content: center; background: {{band_bg}}; }
+  .band span { font-family: "Body"; font-weight: 500; font-size: 34px; line-height: 1.3; color: {{band_ink}}; max-width: 1700px; text-align: center; text-wrap: balance; }
+  .label { display: none; padding: 12px 22px; background: {{label_bg}}; color: {{label_ink}}; font-family: "Mono"; font-size: 30px; border-radius: 8px; width: fit-content; }
+</style>
+</head>
+<body>
+  <div id="title" class="card">
+    {{mark}}
+    <h1>{{title_headline}}</h1>
+    <p>{{title_sub}}</p>
+  </div>
+  <div id="end" class="card">
+    {{mark}}
+    <h1>{{end_headline}}</h1>
+    <div class="links">{{end_lines}}</div>
+    <p>{{end_sub}}</p>
+  </div>
+  <div id="band" class="band"><span id="text"></span></div>
+  <div id="label" class="label"></div>
+  <script>
+    const q = new URLSearchParams(location.search);
+    const mode = q.get("mode");
+    if (mode === "cap") { document.getElementById("band").style.display = "flex"; document.getElementById("text").textContent = q.get("text"); }
+    else if (mode === "label") { const l = document.getElementById("label"); l.style.display = "block"; l.textContent = q.get("text"); }
+    else document.getElementById(mode).style.display = "flex";
+  </script>
+</body>
+</html>
