@@ -1,5 +1,5 @@
 {
-  "_note": "The real cut of the Ironclad demo, 4 Nov 2026 (the first upload is https://youtu.be/W0D4gGicvA4; this version fixes the attacks clip, which started 2.3 s early on an idle screen). Cut points and cues come from reading the raw takes frame by frame. Each clip starts about a second before its first event and ends at least three seconds after its last output. Every line has an 'at': seconds into its clip where the event it describes appears, so the voice never runs ahead of the screen. A line that would overlap the one before waits for it; a scene whose voice outlasts its footage holds the last frame.",
+  "_note": "The real cut of the Ironclad demo, 4 Nov 2026 (published as https://youtu.be/8QMsMO8Dx6E; it fixes the attacks clip, which started 2.3 s early on an idle screen). Cut points and cues come from reading the raw takes frame by frame. Each clip starts about a second before its first event and ends at least three seconds after its last output. Every line has an 'at': seconds into its clip where the event it describes appears, so the voice never runs ahead of the screen. A line that would overlap the one before waits for it; a scene whose voice outlasts its footage holds the last frame.",
   "scenes": [
     {
       "id": "title",
