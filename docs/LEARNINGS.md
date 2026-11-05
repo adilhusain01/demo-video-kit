@@ -68,6 +68,7 @@ These were refused in auto mode, rightly, and are the user's to do:
 
 ## Hosting the demo site
 
+- Public demo sites go on Vercel or a subdomain of Adil's domain, on port 443 (his rule, 5 Nov 2026). A Tailscale Funnel address on port 8443 would not open on the organisers' laptop on the venue Wi-Fi at the Free Society demo day, and the live demo was lost. Check the link from a phone on mobile data before any event.
 - If the product's server serves the site from its own address, the page and its API share one origin and no CORS is needed; the judges' URL never changes.
 - A dashboard that runs a long job per click should start it in the background and stream lines through a state endpoint the page polls, instead of holding the request open for a minute.
 - Serve video with HEAD and byte-range support, or Safari and iPhones won't play it.
